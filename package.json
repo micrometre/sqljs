@@ -8,5 +8,14 @@
   "license": "MIT",
   "dependencies": {
     "sqlite3": "^5.1.6"
+  },
+  "scripts": {
+    "test": "nodemon  server.js",
+    "start": "node server.js",
+    "dev": "nodemon db.js",
+    "debug": "DEBUG=anpr-app:* npm dev"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
