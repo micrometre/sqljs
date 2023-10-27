@@ -1,0 +1,9 @@
+{
+  "name": "injeraAPP",
+  "version": "1.0.0",
+  "description": "recipeis",
+  "main": "index.js",
+  "repository": "git@github.com:micrometre/sqljs.git",
+  "author": "Henok <henokmicrometre@gmail.com>",
+  "license": "MIT"
+}
