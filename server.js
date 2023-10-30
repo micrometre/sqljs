@@ -1,16 +1,17 @@
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
- 'wordpress',
- 'wordpressuser',
- '=[-p0o9i8U',
-  {
-    host: 'localhost',
-    dialect: 'mysql'
-  }
-);
+var mysql = require('mysql');
 
-sequelize.authenticate().then(() => {
-   console.log('Connection has been established successfully.');
-}).catch((error) => {
-   console.error('Unable to connect to the database: ', error);
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "wordpressuser",
+  password: "=[-p0o9i8U",
+  database: "wordpress"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM wp_posts", function (err, result, fields) {
+   if (err) throw err;
+   console.log(result);
+ });
+  console.log("Connected!");
 });
