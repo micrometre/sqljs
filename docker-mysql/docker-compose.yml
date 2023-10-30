@@ -13,5 +13,9 @@ services:
        MYSQL_DATABASE: wordpress
        MYSQL_USER: wordpressuser
        MYSQL_PASSWORD: =[-p0o9i8U
+     ports:
+     - 3306:3306
+     expose:
+       - 3306
 volumes:      
     data:         

@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
  'wordpress',
  'wordpressuser',
- 'aa09dd995C72_5355a598fc7D8ab1230a',
+ '=[-p0o9i8U',
   {
     host: 'localhost',
     dialect: 'mysql'
