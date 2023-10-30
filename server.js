@@ -10,6 +10,13 @@ var con = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
+
+
+
+
+
+
+   
    con.connect(function (err) {
       if (err) throw err;
       con.query("SELECT * FROM wp_posts", function (err, result, fields) {
