@@ -16,13 +16,13 @@ app.get('/', (req, res) => {
 
 
 
-   
+
    con.connect(function (err) {
       if (err) throw err;
       con.query("SELECT * FROM wp_posts", function (err, result, fields) {
          if (err) throw err;
          res.json({ "message": "success", result })
-      console.log(result);
+         console.log(result);
       });
       console.log("Connected!");
    });

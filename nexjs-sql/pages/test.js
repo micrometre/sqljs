@@ -19,8 +19,6 @@ export default function Profile() {
  
   return (
     <div>
-      <h1>{data.guid}</h1>
-      <p>{data.bio}</p>
     </div>
   )
 }
