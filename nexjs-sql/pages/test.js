@@ -1,24 +1,28 @@
-import { useState, useEffect } from 'react'
- 
-export default function Profile() {
-  const [data, setData] = useState(null)
-  const [isLoading, setLoading] = useState(true)
- 
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import Link from "next/link";
+
+
+export default function AlprImages() {
+  const [state, setState] = useState([]);
+  async function getData() {
+    const res = await fetch('api/test');
+    const data = await res.json();
+    setState(data);
+  }
   useEffect(() => {
-    fetch('/api/test')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data)
-        console.log(data)
-        setLoading(false)
-      })
+    getData();
   }, [])
- 
-  if (isLoading) return <p>Loading...</p>
-  if (!data) return <p>No profile data</p>
- 
+
   return (
     <div>
+      <>
+        <div>
+          <h1>Alpr List</h1>
+        </div>
+      </>
+
     </div>
   )
 }

@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
    con.connect(function (err) {
       if (err) throw err;
-      con.query("SELECT * FROM wp_posts", function (err, result, fields) {
+      con.query("SELECT ID, guid, post_type, post_title, post_content, post_excerpt, post_status FROM wp_posts WHERE post_type = 'product' AND post_status = 'publish'", function (err, result, fields) {
          if (err) throw err;
          res.json({ "message": "success", result })
          console.log(result);
