@@ -18,9 +18,8 @@ export default function csr() {
     console.log(state.result)
   return (
     <div>
-      {state.map(function (home) {
-          return <div>
-            {home.post_excerpt}
+      {state.map(function (home, index) {
+          return <div key={index}>
             {home.post_title}
             {home.ID}
             {home.guid}
