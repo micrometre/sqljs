@@ -1,28 +1,37 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import Link from "next/link";
+const items = 'baseball bat, cap, yo-yo, fireworks';
 
 
-export default function AlprImages() {
+export default function csr() {
   const [state, setState] = useState([]);
   async function getData() {
-    const res = await fetch('api/test');
+    const res = await fetch('api/sql');
     const data = await res.json();
+    const itemsArr = items.split(',');
+
     setState(data);
   }
   useEffect(() => {
     getData();
   }, [])
-
+    console.log(state.result)
   return (
     <div>
-      <>
-        <div>
-          <h1>Alpr List</h1>
-        </div>
-      </>
+      {state.map(function (home) {
+          return <div>
+            {home.post_excerpt}
+            {home.post_title}
+            {home.ID}
+            {home.guid}
+            {home.post_type}
+            </div>;
+        })}
+
+      <div>
+    </div>
 
     </div>
+  
   )
 }
